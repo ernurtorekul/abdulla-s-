@@ -76,7 +76,7 @@ export default function ExpenseList({ type, yearActive, monthActive, btn=true })
 				.then(() => {
 					update(ref(db, newExpensePath), updateExpense)
 						.then(() => {
-							console.log('Successfully updated!');
+							console.log('Сәтті жаңартылды!');
 							setEditData(initVals);
 							handleEditing();
 						})
@@ -86,7 +86,7 @@ export default function ExpenseList({ type, yearActive, monthActive, btn=true })
 		} else {
 			update(ref(db, expensePath), updateExpense)
 				.then(() => {
-					console.log('Successfully updated!');
+					console.log('Сәтті жаңартылды!');
 					setEditData(initVals);
 					handleEditing();
 				})
@@ -100,9 +100,10 @@ export default function ExpenseList({ type, yearActive, monthActive, btn=true })
 				queryMonth = monthActive === 'all' ? expenseMonth : monthActive,
 				expensePath = `/users/${auth.currentUser.uid}/${type}/${yearActive}/${queryMonth}/${expenseId}`;
 
-		if(window.confirm(`You want to delete this expense?`)) {
+		// if(window.confirm(`You want to delete this expense?`)) {
+		if(window.confirm(`Шығынды жойғыңыз келеді ме?`)) {
 			remove(ref(db, expensePath))
-				.then(() => console.log('Successfully deleted!'))
+				.then(() => console.log('Сәтті жойылды!'))
 				.catch(err => console.log(err));
 		}
 	};
@@ -123,8 +124,8 @@ export default function ExpenseList({ type, yearActive, monthActive, btn=true })
 								/>
 								:
 								<>
-									<span>{expense.name}</span>
-									<strong>€ {parseInt(expense.price).toLocaleString()}</strong>
+									<span>{expense.name}</span> 
+									<strong>₸ {parseInt(expense.price).toLocaleString()}</strong>
 									<time>{expense.date}</time>
 
 									{btn &&
@@ -135,7 +136,7 @@ export default function ExpenseList({ type, yearActive, monthActive, btn=true })
 												data-value={expense.date.slice(5,7)}
 												onClick={handleDelete}
 											>
-												<span id={expense.id} data-value={expense.date.slice(5,7)}>Delete</span>
+												<span id={expense.id} data-value={expense.date.slice(5,7)}>Өшіру</span>
 											</button>
 											
 											<button
@@ -143,7 +144,7 @@ export default function ExpenseList({ type, yearActive, monthActive, btn=true })
 												id={expense.id}
 												onClick={() => handleOpenEditing(expense)}
 											>
-												<span id={expense.id}>Edit</span>
+												<span id={expense.id}>Өзгерту</span>
 											</button>
 										</div>
 									}
@@ -153,15 +154,15 @@ export default function ExpenseList({ type, yearActive, monthActive, btn=true })
 					)}
 
 					<li className={type !== 'earnings' && type !== 'job' && type !== 'roi' ? 'tot-expense' : 'tot-earn'}>
-						<span>TOTAL:</span>
-						<strong>€ {totExpense}</strong>
+						<span>БАРЛЫҒЫ:</span>
+						<strong>₸ {totExpense}</strong>
 					</li>
 				</>
 			:
 				<li className="no-expense">
-					<span>No {type !== 'earnings' && type !== 'job' && type !== 'roi' ? 'Expenses' : 'Earnings'}</span>
-					<strong>€ -</strong>
-					<time>gg/mm/aaaa</time>
+					<span>Бос {type !== 'earnings' && type !== 'job' && type !== 'roi' ? 'Шығындар' : 'Кірістер'}</span>
+					<strong>₸ -</strong>
+					<time>күн/ай/жыл</time>
 				</li>
 			}
 		</ul>

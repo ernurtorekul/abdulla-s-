@@ -1,29 +1,9 @@
 # Finance Management App
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/67bbc49b-2d5f-4352-82db-8b56ef6405a1/deploy-status)](https://app.netlify.com/sites/finance-management/deploys)
-
 This application helps you keep track of your expenses and earnings from month to month by calculating their total.  
 By keeping track of all your expenses and earnings, you realize where your money is going and how your finance is going.
 
 <em>Work in progress...</em>
-
-![Finance Management app](./screenshot.webp)
-
-## Table of contents
-
-- [Overview](#overview)
-  - [About App](#about-app)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Useful resources](#useful-resources)
-- [Getting Started](#getting-started)
-  - [System Requirements](#system-requirements)
-  - [Installation](#installation)
-  - [Bugs](#bugs)
-  - [Contributing](#contributing)
-- [Author](#author)
-- [Licence](#licence) 
 
 ## Overview
 
@@ -42,15 +22,7 @@ This application helps you keep track of your finances:
 - month and year filtering by checking the data in the database and showing only the dates present
 - summary page to see the difference between expenses and earnings with a selection of items to filter
 
-Upcoming Features:
-- graphical reports and diagrams based on the summary result - coming soon
-- ascending - descending order based on date
-- if you have other interesting features to propose or request write to us!
 
-### Links
-
-- Repository URL: [github](https://github.com/travolgi/react-firebase-finance-management)
-- Live Site URL: [live site](https://finance.travolgi.com)
 
 ## My process
 
@@ -106,22 +78,6 @@ If requirements above are not installed in your computer, you'll need to install
   npm start
   ```
 
-### Bugs
-
-Please feel free to create an issue if you see a bug or something unexpected in the app.
-
-### Contributing
-
-- Fork the Project
-- Create your Feature Branch (`git checkout -b feature/yourFeature`)
-- Commit your Changes (`git commit -m 'Brief explanation of feature`')
-- Push to the Branch (`git push origin feature/yourFeature`)
-- Open a Pull Request
-
-## Author
-
-- Website - [travolgi](https://travolgi.com)
-- Github - [travolgi](https://github.com/travolgi)
 
 ## Licence 
 [MIT licence](https://github.com/travolgi/react-firebase-finance-management/blob/main/LICENSE)

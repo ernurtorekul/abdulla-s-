@@ -19,14 +19,14 @@ export const auth = getAuth(app);
 
 export const signInWithGoogle = () => {
 	signInWithPopup(auth, new GoogleAuthProvider())
-		.then(res => console.log('Sign In with Google done!'))
+		.then(res => console.log('Google арқылы жүйеге кіріңіз!'))
 		.catch(err => console.log(err)
 	);
 }
 
 export const signOut = () => {
 	auth.signOut()
-		.then(res => console.log('Successfully Sign Out.'))
+		.then(res => console.log('Сәтті Шығу.'))
 		.catch(err => console.log(err)
 	);
 }

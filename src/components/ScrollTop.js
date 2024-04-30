@@ -9,7 +9,7 @@ export default function ScrollTop() {
 			className={visible ? 'gotop visible' : 'gotop'}
 			onClick={handleGoTop}
 		>
-			<span className="sr-only">Scroll to top</span>
+			<span className="sr-only">Жоғарыға жылжу</span>
 		</button>
 	);
 }

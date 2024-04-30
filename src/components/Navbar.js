@@ -25,7 +25,7 @@ export default function Navbar({ signOut }) {
 				aria-expanded={isOpen}
 				onClick={handleToggle}
 			>
-				<span className="sr-only">Menu</span>
+				<span className="sr-only">Мәзір</span>
 				<div className="bar1" />
 				<div className="bar2" />
 				<div className="bar3" />
@@ -34,22 +34,22 @@ export default function Navbar({ signOut }) {
 			<nav id="navbar" ref={refNavBar} data-visible={isOpen}>
 				<ul>
 					<li>
-						<ActiveLink href="/" handleToggle={handleToggle}>Expense</ActiveLink>
+						<ActiveLink href="/" handleToggle={handleToggle}>Шығындар</ActiveLink>
 					</li>
-					<li>
+					{/* <li>
 						<ActiveLink href="/investments" handleToggle={handleToggle}>Investments</ActiveLink>
-					</li>
+					</li> */}
 					<li>
-						<ActiveLink href="/earnings" handleToggle={handleToggle}>Earnings</ActiveLink>
+						<ActiveLink href="/earnings" handleToggle={handleToggle}>Кірістер</ActiveLink>
 					</li>
-					<li>
+					{/* <li>
 						<ActiveLink href="/bank" handleToggle={handleToggle}>Bank</ActiveLink>
+					</li> */}
+					<li>
+						<ActiveLink href="/summary" handleToggle={handleToggle}>Барлығы</ActiveLink>
 					</li>
 					<li>
-						<ActiveLink href="/summary" handleToggle={handleToggle}>Summary</ActiveLink>
-					</li>
-					<li>
-						<button onClick={signOut}>Sign Out</button>
+						<button onClick={signOut}>Шығу</button>
 					</li>
 				</ul>
 			</nav>

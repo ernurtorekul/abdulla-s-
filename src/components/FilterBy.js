@@ -1,6 +1,6 @@
 export default function FilterBy({ currentDate, monthActive, yearActive, allMonths, allYears, handleChangeDate }) {
 	function getMonthName(monthNumber) {
-		const monthNames = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+		const monthNames = [ 'Қаңтар', 'Ақпан', 'Наурыз', 'Сәуір', 'Мамыр', 'Маусым', 'Шілде', 'Тамыз', 'Қыркүйек', 'Қазан', 'Қараша', 'Желтоқсан' ];
 		return monthNames[monthNumber - 1];
 	}
 
@@ -20,7 +20,7 @@ export default function FilterBy({ currentDate, monthActive, yearActive, allMont
 					) :
 					<option value={currentDate.month}>{getMonthName(currentDate.month)}</option>
 				}
-				<option value="all">See all</option>
+				<option value="all">Барлығын көру</option>
 			</select>
 
 

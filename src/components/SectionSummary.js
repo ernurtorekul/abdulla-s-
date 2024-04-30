@@ -69,7 +69,7 @@ export default function SectionSummary() {
 			years: allYears.sort(),
 			months: allMonths.sort()
 		};
-
+		
 		const totalsByTypes = {};
 		for (const type of types) {
 			let totalType = 0;
@@ -90,6 +90,7 @@ export default function SectionSummary() {
 		let totalExpence = 0;
 		
 		totalEarnings = typesSelected.reduce((acc, type) => {
+			// if (['earnings', 'job', 'roi'].includes(type)) {
 			if (['earnings', 'job', 'roi'].includes(type)) {
 				acc += typesTotal[type];
 			}
@@ -111,10 +112,10 @@ export default function SectionSummary() {
 	return (
 		<section className="summary-grid">
 			<aside>
-				<h2>Balance:</h2>
+				<h2>Баланс:</h2>
 				
 				<div className="summary-filter">
-					<h3>Filter by:</h3>
+					<h3>Фильтр:</h3>
 					<FilterBy
 						currentDate={currentDate}
 						monthActive={date.month}
@@ -137,24 +138,25 @@ export default function SectionSummary() {
 								onClick={handleClick}
 							/>
 
-							€ {typesTotal[type]}
+							₸ {typesTotal[type]}
 						</label>
 					)}
 				</div>
 
 				<ul className="expense-list list-summary">
 					<li className={summaryTotal < 0 ? 'tot-expense' : 'tot-earn'}>
-						<span>TOTAL:</span>
-						<strong>€ {summaryTotal}</strong>
+						<span>БАРЛЫҒЫ:</span>
+						<strong>₸ {summaryTotal}</strong>
 					</li>
 				</ul>
 			</aside>
 
 			<ul>
-				<h2>Summary:</h2>
+				<h2>Жалпы:</h2>
 				{typesSelected.map(type =>
 					<li key={type}>
 						<h2>{type.charAt(0).toUpperCase() + type.slice(1)}</h2>
+						{/* <h2>Кірістер</h2> */}
 
 						<ExpenseList
 							type={type}

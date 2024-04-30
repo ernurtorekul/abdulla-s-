@@ -14,47 +14,51 @@ export default function App() {
 			<Header />
 
 			<main>
-				<h1 className="txt-center">Finance Management</h1>
+				<h1 className="txt-center">Автовокзал кассаларын басқару жүйесі</h1>
 
 				{isUserSignedIn ?
 					<Routes>
 						<Route
 							path='/'
 							element={[
-								<SectionType type='fun' />,
-								<SectionType type='life'/>,
-								<SectionType type='rent'/>
+								// <SectionType type='fun' />,
+								// <SectionType type='life'/>,
+								<SectionType type='Шығындар'/>,
+								// <SectionType type='rent'/>
 							]}
 						/>
-						<Route
+						{/* <Route
 							path='/investments'
 							element={[
 								<SectionType type='investments' />,
 								<SectionType type='roi' />
 							]}
-						/>
+						/> */}
 						<Route
 							path='/earnings'
 							element={[
-								<SectionType type='earnings' />,
-								<SectionType type='job' />
+								<SectionType type='Алматы' />,
+								<SectionType type='Тараз'/>,
+								<SectionType type='Басқа кірістер'/>,
+								// <SectionType type='earnings' />,
+								// <SectionType type='job' />
 							]}
 						/>
-						<Route
+						{/* <Route
 							path='/bank'
 							element={<SectionType type='bank' />}
-						/>
+						/> */}
 						<Route
 							path='/summary'
 							element={<SectionSummary />}
 						/>
 						<Route
 							path='/*'
-							element={<h1 className="txt-center">404 Error - Page Not Found</h1>}
+							element={<h1 className="txt-center">404 Қате-Бет Табылмады</h1>}
 						/>
 					</Routes>
 					:
-					<p className="txt-center">Sign in with Google to use the app.</p>
+					<p className="txt-center">Қолданбаны пайдалану үшін Google жүйесіне кіріңіз.</p>
 				}
 			</main>
 

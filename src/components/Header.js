@@ -18,7 +18,7 @@ export default function Header() {
 					<Navbar signOut={signOut} />
 				</>
 				:
-				<button onClick={signInWithGoogle}>Sign In</button>
+				<button onClick={signInWithGoogle}>Кіру</button>
 			}
 		</header>
 	);
